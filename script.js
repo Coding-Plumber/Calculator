@@ -1,32 +1,44 @@
-
-const buttonOne = document.getElementById("digit-1");
-console.log(buttonOne);
+function attachClickHandlers(buttons, userInput) {
+    for (let button of buttons) {
+      button.addEventListener("click", (event) => {
+        const buttonElement = event.target;
+        const buttonText = buttonElement.textContent;
+        if (userInput.textContent === "0") {
+          userInput.textContent = "";
+        }
+        if (userInput.textContent.length < 9) {
+          userInput.textContent += buttonText;
+        }
+      });
+    }
+  }
+  
+const buttons = document.querySelectorAll(".digits");
 const userInput = document.getElementById("user-input");
-console.log(userInput);
+  
+attachClickHandlers(buttons, userInput);
 
-buttonOne.addEventListener("click", (event) => {
 
-    const buttonElement = event.target;
 
-    const buttonText = buttonElement.textContent;
+const clearBtn = document.getElementById("clear")
 
-    userInput.textContent += buttonText;
+clearBtn.addEventListener("click", () => {
+    const input = userInput.textContent;
+    if(input.length > 1) {
+        userInput.textContent = input.slice(0, -1);
+    } else {
+        userInput.textContent = "0";
+    }
+   
 });
 
 
 
-const two = document.getElementById("digit-2");
-const three = document.getElementById("digit-3");
-const four = document.getElementById("digit-4");
-const five = document.getElementById("digit-5");
-const six = document.getElementById("digit-6");
-const seven = document.getElementById("digit-7");
-const eight = document.getElementById("digit-8");
-const nine = document.getElementById("digit-9");
-
-
-
-
+const resetValue = userInput.textContent = "0";
+const allClear = document.getElementById("all-clear");
+allClear.addEventListener("click", () => {
+    userInput.textContent ="0";
+})
 
 
 
