@@ -52,7 +52,7 @@ body {
                 0 -3px 5px 0 #3b3b3b(0, 0, 0, 0.2);
 }
 
-.user-input {
+#user-input {
     display: flex;
     box-sizing: border-box;
     width: 100%;
@@ -64,14 +64,14 @@ body {
     justify-content: flex-end;
     align-items: center;
     padding: 15px;
-    font-size: x-large;
+    font-size: large;
     color: #FCB31B;
 }
 
 
 
 
-.result {
+#result {
     display: flex;
     width: 100%;
     height: 40px;
@@ -84,6 +84,7 @@ body {
     justify-content: flex-end;
     align-items: center;
     color: white;
+    padding: 15px;
 }
 
 
@@ -111,6 +112,10 @@ button {
     background-color: #616161;
 }
 
+.allclear {
+    grid-column: span 2;
+}
+
 button {
     background-color: #616161;
     box-shadow: 0 0px 15px 0 #000000(0, 0, 0, 0.2);
@@ -124,4 +129,24 @@ footer {
     font-style: bold;
     font-size: large;
     font-family: monospace;
+}
+
+.digits:hover {
+    background-color: white;
+}
+
+.operators:hover {
+    background-color: #9CC0E7;
+}
+
+.equals:hover {
+    background-color: #A5C489;
+}
+
+.css-clear:hover {
+    background-color: #D6BAD4;
+}
+
+.decimal:hover {
+    background-color: white;
 }
